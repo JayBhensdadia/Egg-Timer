@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
+  
+
+    @IBOutlet weak var Label: UILabel!
     
-    let eggTimes = ["Soft" : 300, "Medium" : 420, "Hard" : 720]
+    @IBOutlet weak var Progress: UIProgressView!
+    
+    
+    let eggTimes = ["Soft" : 3, "Medium" : 4, "Hard" : 7]
     var secondsRemaining = 60
     var timer = Timer()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,6 +32,8 @@ class ViewController: UIViewController {
     @IBAction func HardnessSelected(_ sender: UIButton) {
         
         timer.invalidate()
+        
+        Progress.progress = 1.0
         
         let hardness = sender.currentTitle!
     
@@ -39,6 +48,9 @@ class ViewController: UIViewController {
         if secondsRemaining > 0{
             print("\(secondsRemaining) seconds")
             secondsRemaining -= 1
+        }else if secondsRemaining == 0{
+            timer.invalidate()
+            Label.text = "Done!"
         }
     }
     

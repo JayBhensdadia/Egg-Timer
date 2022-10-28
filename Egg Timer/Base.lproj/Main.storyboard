@@ -25,7 +25,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-qi-ovk" userLabel="Label View">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="266.33333333333331"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your egg ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="pd9-gy-NF5">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your egg ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="pd9-gy-NF5">
                                                 <rect key="frame" x="10" y="0.0" width="420" height="266.33333333333331"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                                                 <nil key="textColor"/>
@@ -153,7 +153,7 @@
                                         <rect key="frame" x="0.0" y="572.66666666666663" width="430" height="266.33333333333337"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-Va-Kn0">
-                                                <rect key="frame" x="0.0" y="128.33333333333337" width="430" height="10"/>
+                                                <rect key="frame" x="0.0" y="128.33333333333337" width="430" height="11"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Ccn-Fi-0TE"/>
                                                 </constraints>
@@ -196,6 +196,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yma-Rm-R98" secondAttribute="bottom" id="rQz-RR-P1R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Label" destination="pd9-gy-NF5" id="Dwl-jg-gxN"/>
+                        <outlet property="Progress" destination="g4T-Va-Kn0" id="EXG-Dg-0mU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
