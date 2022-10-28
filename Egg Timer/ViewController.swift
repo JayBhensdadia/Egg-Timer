@@ -59,7 +59,18 @@ class ViewController: UIViewController {
         }else if secondsPassed == totalTime{
             timer.invalidate()
             Label.text = "Done!"
+            playAudio()
         }
+    }
+    
+    func playAudio(){
+        
+        if let asset = NSDataAsset(name: "Sound"){
+            player = try! AVAudioPlayer(data:asset.data, fileTypeHint:"mp3")
+            
+            player.play()
+        }
+        
     }
     
 
