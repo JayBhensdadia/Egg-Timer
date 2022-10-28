@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -17,9 +18,13 @@ class ViewController: UIViewController {
     
     
     let eggTimes = ["Soft" : 3, "Medium" : 4, "Hard" : 7]
-    var secondsRemaining = 60
+   
     var timer = Timer()
+    var totalTime = 0
+    var secondsPassed = 0
     
+    
+    var player :  AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,22 +38,25 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         
-        Progress.progress = 1.0
-        
+        Progress.progress = 0.0
+  
         let hardness = sender.currentTitle!
     
         let result = eggTimes[hardness]!
-        secondsRemaining = result
+        totalTime = result
+        
+        Label.text = hardness
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
     
     @objc func updateTimer(){
-        if secondsRemaining > 0{
-            print("\(secondsRemaining) seconds")
-            secondsRemaining -= 1
-        }else if secondsRemaining == 0{
+        if secondsPassed < totalTime{
+            secondsPassed += 1
+            Progress.progress = Float(secondsPassed)/Float(totalTime)
+            
+        }else if secondsPassed == totalTime{
             timer.invalidate()
             Label.text = "Done!"
         }

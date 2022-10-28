@@ -152,8 +152,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxr-Ub-Zrq" userLabel="Progress View">
                                         <rect key="frame" x="0.0" y="572.66666666666663" width="430" height="266.33333333333337"/>
                                         <subviews>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-Va-Kn0">
-                                                <rect key="frame" x="0.0" y="128.33333333333337" width="430" height="11"/>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-Va-Kn0">
+                                                <rect key="frame" x="0.0" y="128.33333333333337" width="430" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Ccn-Fi-0TE"/>
                                                 </constraints>
