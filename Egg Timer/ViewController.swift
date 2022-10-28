@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     let eggTimes = ["Soft" : 300, "Medium" : 420, "Hard" : 720]
     var secondsRemaining = 60
-    
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func HardnessSelected(_ sender: UIButton) {
+        
+        timer.invalidate()
+        
         let hardness = sender.currentTitle!
     
         let result = eggTimes[hardness]!
         secondsRemaining = result
         
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
     
